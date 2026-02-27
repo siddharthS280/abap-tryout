@@ -1,0 +1,45 @@
+managed implementation in class ZSTUBP_R_STUDENT__140140 unique;
+strict ( 2 );
+with draft;
+extensible;
+define behavior for ZSTUR_STUDENT__140140 alias ZsturStudent_140140
+persistent table ZSTUDENT___140
+extensible
+draft table ZSTUSTDNT_D140
+etag master LastChangedAt
+lock master total etag LastChangedAt
+authorization master( global )
+{
+  field ( readonly )
+   ID,
+   CreatedBy,
+   CreatedAt,
+   LastChangedBy,
+   LastChangedAt;
+
+  field ( numbering : managed )
+   ID;
+
+
+  create;
+  update;
+  delete;
+
+  draft action Activate optimized;
+  draft action Discard;
+  draft action Edit;
+  draft action Resume;
+  draft determine action Prepare;
+
+  mapping for ZSTUDENT___140 corresponding extensible
+  {
+    ID = ID;
+    Name = NAME;
+    Age = AGE;
+    CreatedBy = CREATED_BY;
+    CreatedAt = CREATED_AT;
+    LastChangedBy = LAST_CHANGED_BY;
+    LastChangedAt = LAST_CHANGED_AT;
+  }
+
+}

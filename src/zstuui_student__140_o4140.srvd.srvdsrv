@@ -1,0 +1,11 @@
+@EndUserText: {
+  label: 'Service Definition for ZSTUC_STUDENT__140140'
+}
+@ObjectModel: {
+  leadingEntity: {
+    name: 'ZSTUC_STUDENT__140140'
+  }
+}
+define service ZSTUUI_STUDENT__140_O4140 provider contracts odata_v4_ui {
+  expose ZSTUC_STUDENT__140140;
+}
